@@ -53,7 +53,7 @@ jobs:
           VERSION: ${{ steps.get_version.outputs.version }}
         uses: docker/build-push-action@v5
         with:
-          context: ./cicd/docker
+          context: .
           file: ./cicd/docker/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: false
