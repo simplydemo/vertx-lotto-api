@@ -1,0 +1,45 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8080
+  },
+  "profiles": {
+    "dev": {
+      "greeting": "Hello, Dev!",
+      "port": 8080,
+      "color": [
+        "red",
+        "blue"
+      ],
+      "price": {
+        "won": 1000,
+        "dolor": 1
+      },
+      "region": {
+        "kor": {
+          "stage": "dev"
+        },
+        "jpn": {
+          "stage": "prd"
+        }
+      }
+    },
+    "prod": {
+      "greeting": "Hello, Production!",
+      "port": 8090,
+      "color": [
+        "red",
+        "blue"
+      ],
+      "price": {
+        "won": 2000,
+        "dolor": 2
+      }
+    }
+  },
+  "application": {
+    "name": "lotto"
+  }
+}
+
+
