@@ -58,7 +58,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: false
           tags: "symplesims/vertx-lotto-api:${{ env.VERSION }}"
-          build-args: VERSION=${{ env.VERSION }}
+          build-args: |
+            VERSION=${{ env.VERSION }}
+            PROFILE=${{ github.event.inputs.profile }}
 
       - name: List Images
         run: docker image ls
