@@ -1,0 +1,9 @@
+name: vertx-lotto-api to EKS by manually
+on:
+  workflow_dispatch
+
+jobs:
+  do-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "workflow_dispatch is manual trigger on Giihub Actions!"
