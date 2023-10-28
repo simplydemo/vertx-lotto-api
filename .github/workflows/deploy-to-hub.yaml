@@ -25,7 +25,7 @@ jobs:
         with:
           java-version: '17'
           distribution: 'corretto'
-        cache: maven
+          cache: maven
 
       - name: Get project version
         id: get_version

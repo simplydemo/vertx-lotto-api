@@ -91,8 +91,7 @@ jobs:
 
 ## Actions 실행기
 
-Github에서 제공하는 [actions 실행기](https://docs.github.com/ko/actions/learn-github-actions/essential-features-of-github-actions)의 필수 기능으로 github 에서 소스 코드를 
-`checkout` 하고 아티팩트를 `upload` 및 `download` 할 수 있습니다.   
+Github에서 제공하는 [actions 실행기](https://docs.github.com/ko/actions/learn-github-actions/essential-features-of-github-actions)의 필수 기능으로 github 에서 소스 코드를 `checkout` 하고 아티팩트를 `upload` 및 `download` 할 수 있습니다.   
 
 actions 의 사용은 `uses` 키워드로 하며 `actions/<커멘드>`를 통해 명령이 실행됩니다. `<커멘드>`를 실행할때 버전을 선택하기 위해 `@<버전>` 을 사용니다.     
 
@@ -100,8 +99,19 @@ actions 의 사용은 `uses` 키워드로 하며 `actions/<커멘드>`를 통해
 steps:
   - uses: actions/checkout@v4
 ```
-
 위 명령은 버전 4의 checkout 실행기를 사용하는 것을 의미 합니다.
+
+### Github provider actions
+- [actions](https://github.com/orgs/actions/repositories)
+- [checkout](https://github.com/actions/checkout)
+- [setup-java](https://github.com/actions/setup-java)
+- [upload-artifact](https://github.com/actions/upload-artifact)
+- [download-artifact](https://github.com/actions/download-artifact)
+
+### AWS provider actions
+- [aws-actions](https://github.com/aws-actions)
+
+
 
 ### Maven 빌드 예제 
 
