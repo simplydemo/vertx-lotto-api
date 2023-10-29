@@ -26,8 +26,6 @@ jobs:
     steps:
       - name: show variables
         run: |
-          - echo "AWS_REGION 1: $AWS_REGION"
-          - echo "AWS_REGION 2: ${AWS_REGION}"
-          - echo "AWS_REGION 3: ${{ env.AWS_REGION }}"
-          - echo "GITHUB_RUN_NUMBER: ${GITHUB_RUN_NUMBER}"
-          - echo "REPOSITORY_URL: ${REPOSITORY_URL}"
+          echo "version=1.0.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+          echo "AWS_REGION=${AWS_REGION}" >> $GITHUB_ENV
+          echo "REPOSITORY_URL=${REPOSITORY_URL}" >> $GITHUB_ENV
