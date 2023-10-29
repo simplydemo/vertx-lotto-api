@@ -20,9 +20,9 @@ jobs:
       url: https://github.com
 
     steps:
-      - name: Get project version
-        id: get_version
+      - name: show variables
         run: |
-          - echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
-          - echo "AWS_REGION: ${{ env.AWS_REGION }}"
+          - echo "AWS_REGION 1: $AWS_REGION"
+          - echo "AWS_REGION 2: ${{ env.AWS_REGION }}"
+          - echo "AWS_REGION 3: ${{ SimplyDemo.AWS_REGION }}"
           - echo "REPOSITORY_URL: ${{ env.REPOSITORY_URL }}"
