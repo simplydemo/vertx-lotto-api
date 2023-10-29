@@ -1,4 +1,4 @@
-name: vertx-lotto-api deploy to ECR repository
+name: check variables
 on:
   push:
     branches-ignore:
