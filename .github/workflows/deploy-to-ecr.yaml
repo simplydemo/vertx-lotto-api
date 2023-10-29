@@ -36,9 +36,9 @@ jobs:
       - name: Get project version
         id: get_version
         run: |
-          - echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
-          - echo "AWS_REGION: ${{ env.AWS_REGION }}"
-          - echo "REPOSITORY_URL: ${{ env.REPOSITORY_URL }}"
+          echo "AWS_REGION: ${{ env.AWS_REGION }}"
+          echo "REPOSITORY_URL: ${{ env.REPOSITORY_URL }}"
+          echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
 
       - name: Build Artifact
         run: mvn package -DskipTests=true -B -file pom.xml
