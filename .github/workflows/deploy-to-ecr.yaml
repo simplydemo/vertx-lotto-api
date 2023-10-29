@@ -1,5 +1,8 @@
 name: vertx-lotto-api deploy to ECR repository
 on:
+  push:
+    branches-ignore:
+      - main
   workflow_dispatch:
     inputs:
       profile:

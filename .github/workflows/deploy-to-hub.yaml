@@ -1,5 +1,8 @@
 name: vertx-lotto-api deploy to docker hub
 on:
+  push:
+    branches-ignore:
+      - main
   workflow_dispatch:
     inputs:
       profile:
