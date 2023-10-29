@@ -1,4 +1,8 @@
 name: check variables
+
+env:
+  AWS_REGION: 'ap-northeast-1'
+
 on:
   push:
     branches-ignore:
