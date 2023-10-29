@@ -18,6 +18,9 @@ jobs:
     environment:
       name: SimplyDemo
       url: https://github.com
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      REPOSITORY_URL: ${{ vars.REPOSITORY_URL }}
 
     steps:
       - name: Checkout

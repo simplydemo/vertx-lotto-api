@@ -47,4 +47,3 @@ jobs:
           echo "AWS_REGION: $AWS_REGION"
           echo "REPOSITORY_URL: $REPOSITORY_URL"
           echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
-          echo "GITHUB_RUN_NUMBER: ${{env.GITHUB_RUN_NUMBER}}"
