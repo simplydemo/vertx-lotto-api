@@ -33,6 +33,7 @@ jobs:
       - name: step-1 initialize variables
         run: |
           echo "version=1.0.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+          echo "APP_BUILD_NUMBER=date::$(date +'%y%m').${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
 
       - name: step-2 use variables
         run: |
@@ -40,6 +41,7 @@ jobs:
           printf 'AWS_REGION: %s\n' "$AWS_REGION"
           printf '%s\n' "$REPOSITORY_URL"
           printf 'GITHUB_RUN_NUMBER: %s\n' "$GITHUB_RUN_NUMBER"
+          printf 'APP_BUILD_NUMBER: %s\n' "$APP_BUILD_NUMBER"
 
       - name: step-3 echo
         run: |
@@ -47,3 +49,4 @@ jobs:
           echo "AWS_REGION: $AWS_REGION"
           echo "REPOSITORY_URL: $REPOSITORY_URL"
           echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+          echo "APP_BUILD_NUMBER: ${{ env.APP_BUILD_NUMBER }}"
