@@ -4,7 +4,7 @@ RUN mkdir /apps
 
 WORKDIR /apps
 
-COPY ./target/vertx-lotto-api-1.0.0-SNAPSHOT.jar /apps/vertxApp.jar
+COPY ./target/vertx-lotto-api.jar /apps/vertxApp.jar
 
 EXPOSE 8080
 

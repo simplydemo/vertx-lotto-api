@@ -136,3 +136,8 @@ env:
   AWS_ROLE_ARN: "aaa"
   s3_bucket: symple-s3 
 ```
+
+## 기본 환경 변수
+
+Github Actions 에서 제공하는 [기본 환경 변수](https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables)를 활용하면 CICD를 세밀하게 제어할 수 있습니다. 
+

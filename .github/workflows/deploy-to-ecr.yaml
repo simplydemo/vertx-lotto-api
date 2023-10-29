@@ -1,4 +1,4 @@
-name: vertx-lotto-api deploy to ECS
+name: vertx-lotto-api deploy to ECR repository
 on:
   workflow_dispatch:
     inputs:
