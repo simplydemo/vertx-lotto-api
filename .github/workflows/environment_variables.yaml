@@ -1,8 +1,5 @@
 name: check variables
 
-env:
-  AWS_REGION: 'ap-northeast-1'
-
 on:
   push:
     branches-ignore:
@@ -22,18 +19,21 @@ jobs:
     environment:
       name: SimplyDemo
       url: https://github.com
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      REPOSITORY_URL: ${{ vars.REPOSITORY_URL }}
 
     steps:
       - name: check variables
         run: |
           printf 'GITHUB_RUN_NUMBER: %s\n' "$GITHUB_RUN_NUMBER"
-          printf 'AWS_REGION: %s\n' "$AWS_REGION"
+          printf 'AWS_REGION 1: %s\n' "$AWS_REGION"
+          printf 'AWS_REGION 2: %s\n' "${env.AWS_REGION}"
+          printf 'AWS_REGION 3: %s\n' "${{env.AWS_REGION}}"
 
       - name: step-1 initialize variables
         run: |
           echo "version=1.0.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
-          echo "AWS_REGION=${AWS_REGION}" >> $GITHUB_ENV
-          echo "REPOSITORY_URL=${REPOSITORY_URL}" >> $GITHUB_ENV
 
       - name: step-2 use variables
         run: |
@@ -41,3 +41,11 @@ jobs:
           printf 'AWS_REGION: %s\n' "$AWS_REGION"
           printf '%s\n' "$REPOSITORY_URL"
           printf 'GITHUB_RUN_NUMBER: %s\n' "$GITHUB_RUN_NUMBER"
+
+      - name: step-3 echo
+        run: |
+          echo "version: $version"
+          echo "AWS_REGION: $AWS_REGION"
+          echo "REPOSITORY_URL: $REPOSITORY_URL"
+          echo "GITHUB_RUN_NUMBER: $GITHUB_RUN_NUMBER"
+          echo "GITHUB_RUN_NUMBER: ${{env.GITHUB_RUN_NUMBER}}"
