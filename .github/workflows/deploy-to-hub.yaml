@@ -64,4 +64,3 @@ jobs:
           build-args: |
             VERSION=${{ env.VERSION }}
             PROFILE=${{ github.event.inputs.profile }}
-        run: docker image ls
