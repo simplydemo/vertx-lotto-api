@@ -33,7 +33,7 @@ jobs:
       - name: step-1 initialize variables
         run: |
           echo "version=1.0.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
-          echo "APP_BUILD_NUMBER=date::$(date +'%y%m').${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+          echo "APP_BUILD_NUMBER=$(date +'%y%m').${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
 
       - name: step-2 use variables
         run: |
