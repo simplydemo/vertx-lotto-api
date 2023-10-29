@@ -1,0 +1,28 @@
+name: vertx-lotto-api deploy to ECR repository
+on:
+  push:
+    branches-ignore:
+      - main
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: input profile for build and runtime
+        type: string
+        default: "dev"
+        required: true
+
+jobs:
+  build:
+    name: Build Artifact
+    runs-on: ubuntu-latest
+    environment:
+      name: SimplyDemo
+      url: https://github.com
+
+    steps:
+      - name: Get project version
+        id: get_version
+        run: |
+          - echo "version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_OUTPUT
+          - echo "AWS_REGION: ${{ env.AWS_REGION }}"
+          - echo "REPOSITORY_URL: ${{ env.REPOSITORY_URL }}"
