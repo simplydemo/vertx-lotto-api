@@ -28,8 +28,7 @@ jobs:
         run: |
           printf 'GITHUB_RUN_NUMBER: %s\n' "$GITHUB_RUN_NUMBER"
           printf 'AWS_REGION 1: %s\n' "$AWS_REGION"
-          printf 'AWS_REGION 2: %s\n' "${env.AWS_REGION}"
-          printf 'AWS_REGION 3: %s\n' "${{env.AWS_REGION}}"
+          printf 'AWS_REGION 2: %s\n' "${{env.AWS_REGION}}"
 
       - name: step-1 initialize variables
         run: |
